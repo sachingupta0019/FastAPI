@@ -1,0 +1,5 @@
+*.log
+node_modules/
+.env
+link.txt
+Project1
