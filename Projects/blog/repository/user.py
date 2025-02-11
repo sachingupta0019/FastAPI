@@ -1,5 +1,5 @@
 from fastapi import status, HTTPException
-from schemas.schemas import ShowUser, UserModel
+from schemas.schemas import UserModel
 from models.models import User
 from sqlalchemy.orm import Session
 from hashing import Hash

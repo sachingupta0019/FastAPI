@@ -14,7 +14,7 @@ class BlogSchema(BaseModel):
     published: Optional[bool]=True
 
     class Config():
-        orm_mode = True
+        from_attributes = True
 
 
 class UserModel(BaseModel):
@@ -27,7 +27,7 @@ class ShowUser(BaseModel):
     email:str
     blogs: List[BlogSchema] = []
     class Config():
-        orm_mode = True
+        from_attributes = True
 
 class ShowBlog(BaseModel):
     title:str
@@ -35,4 +35,13 @@ class ShowBlog(BaseModel):
     creator: ShowUser
 
     class Config():
-        orm_mode = True
+        from_attributes = True
+
+
+class Token(BaseModel):
+    access_token: str
+    token_type: str
+
+
+class TokenData(BaseModel):
+    email: str | None = None
