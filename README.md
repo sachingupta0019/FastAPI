@@ -1,7 +1,7 @@
 # FastAPI Blog API Project 
 
 ```
-# [https://fast-api-blog.vercel.app/docs](https://fast-api-blog.vercel.app/docs)
+# [https://fast-api-blog.vercel.app/docs]
 ```
 #
 ## Overview
