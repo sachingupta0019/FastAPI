@@ -1,5 +1,9 @@
-# FastAPI Blog API Project
+# FastAPI Blog API Project 
 
+```
+# [https://fast-api-blog.vercel.app/docs](https://fast-api-blog.vercel.app/docs)
+```
+#
 ## Overview
 
 A simple, scalable, and efficient blog application built using FastAPI. This project demonstrates the power of FastAPI for creating RESTful APIs and serves as a foundation for further development.This is a **FastAPI**-based Blog API that provides secure access to blog posts using **OAuth2 and JWT token authentication**. Only authenticated users can access and manage blog content.
