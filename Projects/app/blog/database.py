@@ -1,17 +1,29 @@
+import os
 from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 from typing import Generator
+from urllib.parse import quote_plus
+from dotenv import load_dotenv  # Load environment variables
 
-# Defining the engine
-SQLALCHEMY_DATABASE_URI = "sqlite:///./blogs.db"
+# Load .env file
+load_dotenv()
 
-engine = create_engine(SQLALCHEMY_DATABASE_URI, connect_args={"check_same_thread": False})
+# Read environment variables
+username = os.getenv("DATABASE_USER")
+password = quote_plus(os.getenv("DATABASE_PASSWORD"))  # Encode special characters
+host = os.getenv("DATABASE_HOST")
+port = os.getenv("DATABASE_PORT")
+dbname = os.getenv("DATABASE_NAME")
 
-# Defining the Session
-SessionLocal = sessionmaker(bind=engine, autoflush=False, autocommit = False,)
+# Construct Database URL
+SQLALCHEMY_DATABASE_URI = f"postgresql://{username}:{password}@{host}:{port}/{dbname}"
 
-# Defining Base
+# Create engine
+engine = create_engine(SQLALCHEMY_DATABASE_URI)
+
+# Define Session and Base
+SessionLocal = sessionmaker(bind=engine, autoflush=False, autocommit=False)
 Base = declarative_base()
 
 # Dependency Injection
