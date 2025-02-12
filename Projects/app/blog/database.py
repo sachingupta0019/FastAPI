@@ -6,11 +6,17 @@ from typing import Generator
 from urllib.parse import quote_plus
 from dotenv import load_dotenv  # Load environment variables
 
+
+
+
 # Load .env file
 load_dotenv()
 
 # Read environment variables
 username = os.getenv("DATABASE_USER")
+password = os.getenv("DATABASE_PASSWORD", "")
+if not password:
+    raise ValueError("DATABASE_PASSWORD environment variable is not set")
 password = quote_plus(os.getenv("DATABASE_PASSWORD"))  # Encode special characters
 host = os.getenv("DATABASE_HOST")
 port = os.getenv("DATABASE_PORT")
@@ -33,3 +39,4 @@ def get_db() -> Generator:
         yield db
     finally:
         db.close()
+
