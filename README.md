@@ -90,6 +90,7 @@ A simple, scalable, and efficient blog application built using FastAPI. This pro
    - Swagger UI: [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)
    - ReDoc: [http://127.0.0.1:8000/redoc](http://127.0.0.1:8000/redoc)
 
+
 ## Project Structure
 
 ```plaintext
@@ -161,8 +162,9 @@ This project is licensed under the MIT License. See the `LICENSE` file for detai
 
 ---
 ### Notes
-- Future enhancements may include role-based access control (RBAC), comments, and category filtering.
-- Contributions and suggestions are welcome!
+> [!NOTE]  
+> Future enhancements may include role-based access control (RBAC), comments, and category filtering.
+> Contributions and suggestions are welcome!
 
 
 **Happy Coding!** 
